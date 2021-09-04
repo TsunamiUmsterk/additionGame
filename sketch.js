@@ -115,9 +115,9 @@ function draw() {
           cube = createSprite(x, y, displayWidth/9, displayHeight/9);
           cube.addImage(appleImg);
           appleImg.resize(displayWidth/25, displayHeight/20);
-          x += displayWidth/15;
-          if(x === displayWidth/6 + displayWidth/15*3) {
-               y += displayWidth/18;
+          x += 70;
+          if(x === displayWidth/6 + 210) {
+               y += 60;
                x = displayWidth/6;
           }
      }
@@ -127,10 +127,9 @@ function draw() {
      for(var l=0; l < value2; l++) {
           cube2 = createSprite(m, n, displayWidth/12, displayHeight/12);
           cube2.addImage(bananaImg);
-          bananaImg.resize(displayWidth/25, displayHeight/20);
-          m += displayWidth/15;
-          if(m === displayWidth/3*2 + displayWidth/15*3) {
-               n += displayWidth/18;
+          m += 70;
+          if(m === displayWidth/3*2 + 210) {
+               n += 60;
                m = displayWidth/3*2;
           }
      }
@@ -176,7 +175,7 @@ function draw() {
      }
 
      if(timer > 0 && gameState === 1) {
-          textSize(35);
+          textSize(45);
           textFont('Marker Felt');
           textAlign(CENTER, CENTER);
           fill('green');
@@ -184,7 +183,7 @@ function draw() {
           text(value1, displayWidth/6, displayHeight/3*2 - 20);
           text(value2, displayWidth/3*2, displayHeight/3*2 - 20); 
      } else if(timer > 0 && gameState === 2) {
-          textSize(35);
+          textSize(40);
           textFont('Marker Felt');
           textAlign(CENTER, CENTER);
           fill('red');
