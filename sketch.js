@@ -112,11 +112,12 @@ function draw() {
      x = displayWidth/6;
      y = displayHeight/6*2;
      for(var i=0; i < value1; i++) {
-          cube = createSprite(x, y, displayWidth/12, displayHeight/12);
+          cube = createSprite(x, y, displayWidth/9, displayHeight/9);
           cube.addImage(appleImg);
-          x += 70;
-          if(x === displayWidth/6 + 210) {
-               y += 60;
+          appleImg.resize(displayWidth/25, displayHeight/20);
+          x += displayWidth/15;
+          if(x === displayWidth/6 + displayWidth/15*3) {
+               y += displayWidth/18;
                x = displayWidth/6;
           }
      }
@@ -126,9 +127,10 @@ function draw() {
      for(var l=0; l < value2; l++) {
           cube2 = createSprite(m, n, displayWidth/12, displayHeight/12);
           cube2.addImage(bananaImg);
-          m += 70;
-          if(m === displayWidth/3*2 + 210) {
-               n += 60;
+          bananaImg.resize(displayWidth/25, displayHeight/20);
+          m += displayWidth/15;
+          if(m === displayWidth/3*2 + displayWidth/15*3) {
+               n += displayWidth/18;
                m = displayWidth/3*2;
           }
      }
@@ -174,18 +176,21 @@ function draw() {
      }
 
      if(timer > 0 && gameState === 1) {
-          textSize(45);
+          textSize(35);
           textFont('Marker Felt');
           textAlign(CENTER, CENTER);
           fill('green');
           text("Well Done! You have gotten this question correct!", displayWidth/2, displayHeight/4);
+          text(value1, displayWidth/6, displayHeight/3*2 - 20);
+          text(value2, displayWidth/3*2, displayHeight/3*2 - 20); 
      } else if(timer > 0 && gameState === 2) {
-          textSize(40);
+          textSize(35);
           textFont('Marker Felt');
           textAlign(CENTER, CENTER);
           fill('red');
           text("Sorry, that was incorrect. The answer was " + Ans + ".", displayWidth/2, displayHeight/4);
-
+          text(value1, displayWidth/6, displayHeight/3*2 - 20);
+          text(value2, displayWidth/3*2, displayHeight/3*2 - 20);
      }
 
 
