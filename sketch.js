@@ -20,8 +20,8 @@ function preload() {
 function setup() {
      createCanvas(displayWidth-10, displayHeight/3*2);
 
-     value1 = round(random(1, 9));
-     value2 = round(random(1, 9));
+     value1 = round(random(1, 12));
+     value2 = round(random(1, 12));
      Ans = value1 + value2;
 
      stuff = [-4,-3,-2,-1,1,2,3,4];
@@ -77,7 +77,7 @@ function badAns() {
      gameState = 2;
 
      next = createButton("Next Question");
-     next.position(displayWidth/12, displayHeight/3);
+     next.position(displayWidth/12*5, displayHeight/3);
      next.size(displayWidth/6, displayHeight/15);
      next.style("font-size: 20px; font-family: Marker Felt;");
      next.mousePressed(refresh);
@@ -96,7 +96,7 @@ function wellAns() {
      gameState = 1;
 
      next = createButton("Next Question");
-     next.position(displayWidth/12, displayHeight/3);
+     next.position(displayWidth/12*5, displayHeight/3);
      next.size(displayWidth/6, displayHeight/15);
      next.style("font-size: 25px; font-family: Marker Felt;");
      next.mousePressed(refresh);
@@ -174,7 +174,7 @@ function draw() {
      }
 
      if(timer > 0 && gameState === 1) {
-          textSize(50);
+          textSize(45);
           textFont('Marker Felt');
           textAlign(CENTER, CENTER);
           fill('green');
